@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "0edaeaf7-4129-4bec-a92b-fdfaf16b2a12",
+		"name": "DemoTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31328309"
+	},
+	"item": [
+		{
+			"name": "Create Test Inquiry",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"payload\": [\r\n        {\r\n            \"ref\": \"T-1\",\r\n            \"name\": \"test\",\r\n            \"description\": null\r\n        },\r\n        {\r\n            \"ref\": \"T-2\",\r\n            \"name\": \"test\",\r\n            \"description\": \"Test description\"\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/demo/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"demo",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Ref",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/demo/test/activate/T-2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"demo",
+						"test",
+						"activate",
+						"T-2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate Ref",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/demo/test/deactivate/T-2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"demo",
+						"test",
+						"deactivate",
+						"T-2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
